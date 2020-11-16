@@ -1,0 +1,37 @@
+<html>
+<head>
+<style>
+body
+{
+ background-color:#f7efc1;
+ }
+ </style>
+</head>
+<body>
+<fieldset>
+<legend>Login here</legend>
+<form method="post" action="registration.html">
+User Name:<input type="text" id="username" required/></br><br>
+Password:<input type="password" id="password" required /></br>
+<input type="checkbox"  name="check" value="password"/>show password <br> 
+<input type="submit"   value="login"/>
+<input type="submit"   value="Register here" onClick="registration()"/>
+</fieldset>
+</form>
+<script>
+function registration()
+{
+ var name=document.getElementById("username").value;
+var pass=document.getElementById("password").value;
+if(username==name&&password==pass)
+{
+window.alert("Login sucessfully...!!!");
+}
+else
+{
+window.alert("username or password is incorrect");
+}
+}
+</script>
+</body>
+</html>

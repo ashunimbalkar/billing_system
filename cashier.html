@@ -1,0 +1,120 @@
+<!Doctype>
+<html>
+<head>
+<style>
+body
+{
+ background-color:#0b5866;
+ }
+ </style>
+<title>cashier_details</title>
+<link href="mystyle.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/w3css/3/w3.css">
+<style>
+* {
+    box-sizing: border-box;
+    }
+
+.header 
+{
+    border: 1px solid red;
+    padding:15px;
+}	
+
+.row::after 
+{
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    
+    border: 1px solid red;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+</style>
+<h1><center><b>Profile Details</b></center></h1></head>
+
+<body>
+<div class="border">
+<div class="lable">
+<div class="text-color">
+<form method="POST" name="frmcashier" action="cashierupdateinsert.php">
+Cashier_id :<input type="text" name="userid"  id="userid" required/><br><br>
+cashier_name :<input type="text" name="username" id="username" required/><br><br>
+mobile_no :<input type ="Phone" name="userphone" id="userphone" pattern="^[789][0-9]{9}$" maxlength="10" required/><br><br>
+Address :<input type="address" name="useraddress"  id="useraddress"required/><br><br>
+e-mail :<input type="email" name="usermail" id="usermail"required/><br><br>
+password :<input type="password" name="userpassword" id="userpassword" required/><br><br>
+
+gender:<input type="radio"  value="male" id ="male">male<br>
+<input type="radio"  value="male" id="female">female<br>
+city:<input type="city" name="city" id="usercity" required/><br><br>
+country :<input type="country" name="country" id="usercountry" required/><br><br>
+state:<input type="state" name="state" id="userstate" required/><br><br>
+date :<input type="date" name="date" id="userdate"required/><br><br>
+birthdate :<input type="date" name="date"  id="userbirthdate" required/><br><br>
+age :<input type="age" name="age" id="userage" required/><br><br>
+experience :<input type="text" name="experience" id="userexperience"required/><br><br>
+user:<select>
+<option value="male">user</option>
+<option value="female">admin</option>
+</select>
+</div>
+</div>
+<br><br>
+<input type ="submit" value="ADD" onClick="add()">
+ <input type ="submit" value="UPDATE" onClick="update()">
+<input type ="submit" value="DELETE" onClick="delete()">
+<input type ="submit" value="CANCLE" onClick="cancle()">
+</div>
+</form>
+<script>
+function add()
+{
+var userid=document.getElementById("userid").value;
+var name=document.getElementById("username").value;
+var phone=document.getElementById("userphone").value;
+var address=document.getElementById("useraddress").value;
+var email=document.getElementById("usermail").value;
+var password=document.getElementById("userpassword").value;
+var city=document.getElementById("usercity").value;
+var state=document.getElementById("userstate").value;
+var date=document.getElementById("userdate").value;
+var birthdate=document.getElementById("userbirthdate").value;
+var age=document.getElementById("userage").value;
+var experience=document.getElementById("userexperience").value;
+if(userid==userid&&name==name&&phone==phone&&address==address&&email==email&&password==password&&city==city&&state==state&&date==date&&birthdate==birthdate&&age==age&&experience==experience)
+{
+document.write(userid+"  "+name+"   "+phone+"   "+address+"  "+email+"  "+password+"  "+city+"  "+state+"  "+date+"  "+birthdate+"  "+age+"  "+experience+" ");
+}
+/* function update()
+{
+if(userid==userid&&name==name&&phone==phone&&address==address&&email==email&&password==password&&city==city&&state==state&&date==date&&birthdate==birthdate&&age==age&&experience==experience)
+
+}
+function delete()
+{
+if(userid==userid&&name==name&&phone==phone&&address==address&&email==email&&password==password&&city==city&&state==state&&date==date&&birthdate==birthdate&&age==age&&experience==experience)
+}
+function cancle()
+{
+if(userid==userid&&name==name&&phone==phone&&address==address&&email==email&&password==password&&city==city&&state==state&&date==date&&birthdate==birthdate&&age==age&&experience==experience)
+
+}*/
+}
+</script>
+</body>
+</html>

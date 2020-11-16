@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>Invoice
+</title>
+<link href="mystyle.css" rel="stylesheet" type="text/css" />
+<style>
+* {
+    box-sizing: border-box;
+    }
+.header {
+    border: 1px solid red;
+    padding: 15px;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+</style>
+<style>
+body
+{
+ background-color:#0b5866;
+ }
+ </style>
+</head>
+<body>
+<div class="text-color">
+<form method="POST" name="frminvoice" action="invoiceinsert.php">
+<h1>INVOICE</h1>
+Bill No:<input type="text" name="billno"  id="billno" pattern="[0-9]" required> 
+Bill Date:<input type="date" value="date" id="billdate" required>
+Product No:<input type="number" value="number" id="productno" required>
+Product Name:<input type="text" value=""  id="productname" required>
+Quantity:<input type="text" value=""  id="quantity" required><br><br>
+Per unit price:<input type="text" value=" " id="perunitprice" required><br><br>
+Discount:<input type="text" value="" id="discount" required>
+Total Price:<input type="number" value="number" id="totalprice" required><br><br>
+<center>
+<table border="2">
+<th >s_no</th><th>product_id</th><th>product_name</th><th>Quantity</th><th>unit_price</th><th>total_price</th>
+<tr><td><input type="number" value="number" required></td><td> </td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><input type="number" value="number" required></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><input type="number" value="number" required></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><input type="number" value="number" required></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</center>
+<br><br>
+Discount amount:<input type="number" value="number" id=" discountamount"  required>
+Tax:<input type="%" value=""  id="tax" required>
+Grant Total:<input type="text" value="" id="granttotal" required><br><br>
+<input type="submit" value="new">
+<input type="submit" value="save">
+<input type="submit" value="print" onClick="print()"/>
+<input type="submit" value="exit">
+<input type="submit" value="delete">
+<input type="submit" value="find">
+<input type="submit" value="calculate" onClick="calculate()"/>
+</div>
+<script>
+function calculate()
+{
+ var quan=document.getElementById("quantity").value;
+ var per=document.getElementById("perunitprice").value;
+ var disc=document.getElementById("discount").value;
+ var totalp=(quan*per)-(disc/100);
+
+
+ document.getElementById("totalprice").value=totalp;
+  }
+function print()
+{
+var billno=document.getElementById("billno").value;
+var billdate=document.getElementById("billdate").value;
+var productno=document.getElementById("productno").value;
+var productname=document.getElementById("productname").value;
+
+var quantity=document.getElementById("quantity").value;
+var perunitprice=document.getElementById("perunitprice").value;
+var discount=document.getElementById("discount").value;
+var totalprice=document.getElementById("totalprice").value;
+var discountamount=document.getElementById("discountamount").value;
+var tax=document.getElementById("tax").value;
+var granttotal=document.getElementById("granttotal").value;
+
+
+if(billno==billno&&billdate==billdate&&productno==productno&&productname==productname&&quantity==quantity&&perunitprice==perunitprice&&discount==discount&&totalprice==totalprice&&discountamount==discountamount&&tax==tax&&granttotal==granttotal)
+{
+document.write(billno+" "+billdate+"   "+productno+"    "+productname+"   "+quantity+"    "+perunitprice+" "+ discount+" "+totalprice+" "+ discountamount+"  "+ tax+"  "+granttotal+" ");
+}
+}
+</script
+</body>
+</html>
